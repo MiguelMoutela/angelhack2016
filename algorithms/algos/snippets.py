@@ -24,7 +24,7 @@ questions = {
     1: "How can I help you?",
     2: "When has started this head ache?",
     3: "Hours, Days, Months?",
-    4: "Was it developed suddenly or over time?'",
+    4: "Was it developed suddenly or over time?",
     5: "Has it been instant?",
     6: "Around or a specific place?",
     7: "Has the pain changed since it started?",
