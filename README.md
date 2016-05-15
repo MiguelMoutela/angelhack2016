@@ -90,8 +90,8 @@ curl -X POST -H "Content-Type: application/json" -d '{
 Returns
 ```python
 {
-    "question": "¿Cómo ayuda?",
-    "question_id": 1
+    "question":"Horas, Días, Meses?",
+    "question_id":3
 }
 ```
 -----
