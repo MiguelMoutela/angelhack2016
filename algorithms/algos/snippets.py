@@ -21,7 +21,7 @@ gender_dict = {
 }
 
 questions = {
-    1: "What's wrong?",
+    1: "How can I help you?",
     2: "When did this headache start?",
     3: "Hours, Days, Months?",
     4: "Was it sudden or did it develop over time?",
@@ -70,6 +70,7 @@ def get_patient_data(dob, gender):
     return patient
 
 def persist_question_to_file(question_id, parsed_response):
+    question_id = int(question_id)
     report_path = os.path.join(DATA_DIR, 'report.json')
     with open(report_path) as json_file:
         data = json.load(json_file)
@@ -103,7 +104,7 @@ def get_next_question(question_id, parsed_response):
 
     next_question = {
     "question_id": new_question_id,
-    "question": questions[question_id]
+    "question": questions[new_question_id]
     }
     return next_question
 

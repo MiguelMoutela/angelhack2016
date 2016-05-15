@@ -80,8 +80,14 @@ Returns data for question 1
 ```python
  POST /rest_api/question/<question_id>/
 ```
-Post an audio file to this endpoint for translation and storage in the doctor's report.
-Returns the data for the next question
+Post text in native language for translation to english and adding to the doctor's file
+```shell
+curl -X POST -H "Content-Type: application/json" -d '{
+    "text": "hola, mundo"
+}' "http://localhost:8000/rest_api/question/2/"
+```
+
+Returns
 ```python
 {
     "question": "¿Cómo ayuda?",

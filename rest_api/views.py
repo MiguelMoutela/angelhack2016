@@ -1,8 +1,8 @@
-from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from django.http import HttpResponse
 from algos import snippets, translation_algos
+from rest_framework.parsers import JSONParser
+from django.views.decorators.csrf import csrf_exempt
 
 class GetListOfLanguages(APIView):
     def get(self, request):
@@ -29,23 +29,34 @@ class GetPatientData(APIView):
 
 class GetFirstQuestion(APIView):
     def get(self, request):
-        phrase = translation_algos.translate_en_to_es('How Can I Help?')
+        phrase = translation_algos.translate_en_to_es('How can I help you?')
         data = {
             "question_id": 1,
             "question": phrase,
         }
         return Response(data)
 
-class Question(APIView):
-    def post(self, request, question_id):
+    @csrf_exempt
+    def post(self, request):
+        data = request.data
+        parsed_response = request.data['text']
+        translated_response = translation_algos.translate_es_to_en(parsed_response)
+        snippets.persist_question_to_file(1, translated_response)
+        next_question = snippets.get_next_question(1, translated_response)
+        next_question['question'] = translation_algos.translate_en_to_es(next_question['question'])
+        return Response(next_question)
+        
 
-        audio_file = request.FILES['file']
-        # parse audio file
-        # translate parsed response
-        # add parsed response to report
-        # snippets.get_next_question(question_id, parsed_response)
-        # translate next question
-        # return next_question
+class Question(APIView):
+    @csrf_exempt
+    def post(self, request, question_id):
+        data = request.data
+        parsed_response = request.data['text']
+        translated_response = translation_algos.translate_es_to_en(parsed_response)
+        snippets.persist_question_to_file(question_id, translated_response)
+        next_question = snippets.get_next_question(question_id, translated_response)
+        next_question['question'] = translation_algos.translate_en_to_es(next_question['question'])
+        return Response(next_question)
 
 class GetReport(APIView):
     def get(self, request):
