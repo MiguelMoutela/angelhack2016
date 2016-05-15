@@ -51,7 +51,7 @@ Returns a key value pairs of DoB and Gender in the chosen language:
 ```
 -----
  ```python
- GET /get_patient_data/<YYYY-MM-DD>/<male | female>
+ GET /reat_api/get_patient_data/<YYYY-MM-DD>/<male | female>
 ```
 
 Returns records for patient with this date of birth and gender:
@@ -65,3 +65,50 @@ Returns records for patient with this date of birth and gender:
 }
 ```
 -----
+```python
+ GET /rest_api/question/1/
+```
+
+Returns data for question 1
+```python
+{
+    "question": "¿Cómo ayuda?",
+    "question_id": 1
+}
+```
+-----
+```python
+ POST /rest_api/question/<question_id>/
+```
+Post an audio file to this endpoint for translation and storage in the doctor's report.
+Returns the data for the next question
+```python
+{
+    "question": "¿Cómo ayuda?",
+    "question_id": 1
+}
+```
+-----
+```python
+ POST /rest_api/question/<get_report>/
+```
+Gets doctor's report.
+```python
+{
+    "nhs_number": "01234567",
+    "first_name": "Sabina",
+    "date_of_birth": "1990-01-01",
+    "surname": "Socoli",
+    "questions": [
+        {
+            "answer": "This is my answer to question 1",
+            "question": "What's wrong?"
+        },
+        {
+            "answer": "This is my answer to question 2",
+            "question": "When did this headache start?"
+        }
+    ]
+}
+```
+
