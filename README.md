@@ -13,7 +13,7 @@ cd to this directory
 pip install -r requirements.txt
 ```
 
-###Running the REST service locally
+### Running the REST service locally
 Run the service as follows
 ```shell
 python manage.py runserver 0.0.0.0:8000
@@ -23,5 +23,18 @@ Any changes made locally will cause the site to rebuild automagically.
 
 The different rest endpoints can be accessed as follows:
 
+#### Endpoints
 
-
+ ```python
+ GET /rest_api/get_languages
+```
+Returns list of languages:
+ ```python
+ [
+    "german",
+    "italian",
+    "spanish",
+    "french",
+    "english"
+]
+```
