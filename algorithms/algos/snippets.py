@@ -22,27 +22,27 @@ gender_dict = {
 
 questions = {
     1: "How can I help you?",
-    2: "When did this headache start?",
+    2: "When has started this head ache?",
     3: "Hours, Days, Months?",
-    4: "Was it sudden or did it develop over time?",
-    5: "Was it instant?",
-    6: "Is it all over the head or a specific place?",
+    4: "Was it developed suddenly or over time?'",
+    5: "Has it been instant?",
+    6: "Around or a specific place?",
     7: "Has the pain changed since it started?",
     8: "Can you describe the type of pain?",
-    9: "Does the pain move anywhere?",
-    10: "What makes the pain better?",
-    11: "What makes the pain worse?",
-    12: "Out of ten, where ten is the most pain, what would you rate the pain?",
-    13: "Have you ever had this before?",
-    14: "Do you have a rash anywhere? Yes or No",
+    9: "The pain moves?",
+    10: "What, makes the pain better?",
+    11: "What, makes the pain worse?",
+    12: "Out of ten, how would you rate the pain? ten is being the worst",
+    13: "Have you had this pain before?",
+    14: "Do you have a skin rash? Yes or No",
     15: "Have you had any nausea? Yes or No",
     16: "Have you vomited? Yes or No",
     17: "Have you had a fever? Yes or No",
-    18: "Do you have any neck pain? Yes or No",
+    18: "Do you have any pain in your neck? Yes or No",
     19: "Have you experienced any memory loss? Yes or No",
     20: "Have you had any problems moving your arms or legs? Yes or No",
     21: "Have you experienced any loss of feeling in your arms or legs? Yes or No",
-    22: "Have you ever had any fits or seizures? Yes or No"
+    22: "Have you ever had any convulsions? Yes or No"
 }
 
 __here__ = os.path.dirname(os.path.abspath(__file__))
