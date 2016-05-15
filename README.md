@@ -38,3 +38,30 @@ Returns list of languages:
     "english"
 ]
 ```
+
+ ```python
+ GET /rest_api/choose_language/<language>
+```
+Returns a key value pairs of DoB and Gender in the chosen language:
+ ```python
+ {
+    "gender": "genero",
+    "date_of_birth": "fecha de nacimiento"
+}
+```
+
+ ```python
+ GET /get_patient_data/<YYYY-MM-DD>/<male | female>
+```
+
+Returns records for patient with this date of birth and gender:
+```python
+{
+    "gender": "male",
+    "first_name": "John",
+    "date_of_birth": "1990-01-01",
+    "surname": "Doe",
+    "patient_id": 1
+}
+```
+
