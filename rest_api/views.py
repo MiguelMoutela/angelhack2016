@@ -33,7 +33,9 @@ class GetFirstQuestion(APIView):
         data = {
             "question_id": 1,
             "question": phrase,
-            "name": "Sabina Socoli",
+            "surname": "Socoli",
+            "first_name": "Sabina",
+            "nhs_number": "01234567",
             "date_of_birth": "1990-01-01"
         }
         return Response(data)
