@@ -1,0 +1,4 @@
+patient_id,first_name,surname,date_of_birth,gender
+1,John,Doe,1990-01-01,male
+2,Jane,Smith,1991-01-01,female
+3,George,Brown,1992-01-01,male
