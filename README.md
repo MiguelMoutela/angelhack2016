@@ -13,12 +13,15 @@ cd to this directory
 pip install -r requirements.txt
 ```
 
-###Running the REST service
+###Running the REST service locally
+Run the service as follows
 ```shell
 python manage.py runserver 0.0.0.0:8000
 ```
 
-The site can be viewed in your browser at http://localhost:8000/
-
 Any changes made locally will cause the site to rebuild automagically.
+
+The different rest endpoints can be accessed as follows:
+
+
 
