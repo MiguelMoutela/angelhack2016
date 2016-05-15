@@ -90,7 +90,7 @@ Returns the data for the next question
 ```
 -----
 ```python
- POST /rest_api/question/<get_report>/
+ GET /rest_api/get_report/
 ```
 Gets doctor's report.
 ```python
